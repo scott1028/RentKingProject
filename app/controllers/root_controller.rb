@@ -1,5 +1,5 @@
 class RootController < ApplicationController
   def index
-  	byebug
+  	# byebug
   end
 end
