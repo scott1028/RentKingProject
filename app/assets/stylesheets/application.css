@@ -13,4 +13,5 @@
  *= require normalize-rails
  *= require_tree .
  *= require_self
+ *= require Metro-UI-CSS
 */

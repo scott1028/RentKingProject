@@ -19,3 +19,4 @@
 //= require angular-route/angular-route
 //= require angular-ui-bootstrap-bower/ui-bootstrap.js
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls.js
+//= require Metro-UI-CSS/min/metro.min.js
