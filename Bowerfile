@@ -1,0 +1,7 @@
+# Then place Bowerfile in your root directory. Here's an example of one that uses AngularJS, version 1.2.13:
+
+asset 'angular', '1.2.13'
+asset 'angular-route'
+asset 'angular-resource'
+asset 'angular-mocks'
+asset 'angular-ui-bootstrap-bower'
