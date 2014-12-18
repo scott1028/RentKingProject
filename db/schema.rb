@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218063027) do
+ActiveRecord::Schema.define(version: 20141218070301) do
 
   create_table "post_lists", force: true do |t|
     t.string   "label"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141218063027) do
     t.string   "photo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "genre"
   end
 
 end
