@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'auth/login'
+
+  get 'auth/logout'
+
   resources :post_lists
 
   root 'root#index'
