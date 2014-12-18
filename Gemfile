@@ -46,3 +46,6 @@ gem "bower-rails", "~> 0.9.1"
 gem 'normalize-rails'
 
 gem 'carrierwave'
+
+# Facebook Login
+gem 'omniauth-facebook'
