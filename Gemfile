@@ -44,3 +44,5 @@ gem "bower-rails", "~> 0.9.1"
 
 # CSS Reset
 gem 'normalize-rails'
+
+gem 'carrierwave'

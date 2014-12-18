@@ -1,0 +1,31 @@
+<h1>Listing post_lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_lists.each do |post_list| %>
+      <tr>
+        <td><%= post_list.label %></td>
+        <td><%= post_list.description %></td>
+        <td><%= post_list.price %></td>
+        <td><%= post_list.photo %></td>
+        <td><%= link_to 'Show', post_list %></td>
+        <td><%= link_to 'Edit', edit_post_list_path(post_list) %></td>
+        <td><%= link_to 'Destroy', post_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post list', new_post_list_path %>
