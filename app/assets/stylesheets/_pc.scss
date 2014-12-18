@@ -4,5 +4,9 @@
 
 html body {
     margin: auto;
+    background-color: red;
     width: 1024px;
+    & h1 {
+        color: lightblue!important;
+    }
 }

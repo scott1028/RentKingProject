@@ -4,7 +4,8 @@
 
 html body {
     width: 100%;
-    & h1:hover {
-    	color: red;
+    background-color: blue;
+    & h1 {
+        color: yellow!important;
     }
 }
