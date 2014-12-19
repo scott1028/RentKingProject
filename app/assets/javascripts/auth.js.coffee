@@ -12,9 +12,8 @@ app.controller 'Login', ($scope)->
           FB.api "/me", (response) ->
             console.log "Good to see you, " + response.name + "."
             $.post "/auth/check_access_token/", FB.getAuthResponse(), (r, i, a) ->
-              
-              # debugger;
               console.log r
+              location.reload()
               return
             return
         else
@@ -22,10 +21,10 @@ app.controller 'Login', ($scope)->
 
     $scope.logout= ->
       $.get "/auth/logout/", (r, i, a) ->
+        # FB.logout (response) ->
+        #   user is now logged out
         console.log r
+        location.reload()
         return
-
-      FB.logout (response) ->
-        # user is now logged out
 
     console.info 'Login Ctrl Init'
