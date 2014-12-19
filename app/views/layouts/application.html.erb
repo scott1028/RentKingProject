@@ -11,21 +11,23 @@
   <header class="bg-dark">
     <div class="navigation-bar dark" ng-controller="Login">
       <div class="navigation-bar-content container">
-        <span class="element" ng-show="loggedin">
-          Current User: <%= @user_id %>
+        <span
+          class="element"
+          ng-show="<%= @loggined_user_id != nil %>">
+            Current User: <%= @loggined_user_id %>
         </span>
         <span class="element-divider"></span>
         <a
           class="element place-right"
           ng-click="login()"
-          ng-hide="loggedin"
+          ng-show="<%= @loggined_user_id == nil %>"
           href="">
             Login
         </a>
         <a
           class="element place-right"
           ng-click="logout()"
-          ng-show="loggedin"
+          ng-show="<%= @loggined_user_id != nil %>"
           href="">
             Logout
         </a>

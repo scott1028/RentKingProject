@@ -2,7 +2,7 @@ class AuthController < ApplicationController
   after_action :set_session_logined, only: :check_access_token
 
   def login
-    @user_id = session[:logined_user_id]
+    @loggined_user_id = session[:logined_user_id]
   end
 
   def check_access_token
@@ -35,9 +35,9 @@ class AuthController < ApplicationController
   end
 
   def check_if_logined
-    @user_id = session[:logined_user_id]
-    logger.info @user_id
-    render :json => @user_id
+    @loggined_user_id = session[:logined_user_id]
+    logger.info @loggined_user_id
+    render :json => @loggined_user_id
   end
 
   private

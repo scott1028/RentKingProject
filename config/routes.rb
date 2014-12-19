@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :post_lists
 
-  root 'root#index'
+  # root 'root#index'
+  root 'post_lists#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
