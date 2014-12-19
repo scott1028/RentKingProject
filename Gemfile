@@ -48,4 +48,6 @@ gem 'normalize-rails'
 gem 'carrierwave'
 
 # Facebook Login
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
+
+gem 'fb_graph'

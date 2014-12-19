@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'auth/login'
+  post 'auth/check_access_token'
 
   get 'auth/logout'
 
