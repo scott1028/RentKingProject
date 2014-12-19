@@ -4,7 +4,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-app.controller 'Login', ($scope)->
+app.controller 'Login', ($scope, $rootScope, $cookieStore)->
     $scope.login= ->
       FB.login (response)->
         if response.authResponse
@@ -13,6 +13,9 @@ app.controller 'Login', ($scope)->
             console.log "Good to see you, " + response.name + "."
             $.post "/auth/check_access_token/", FB.getAuthResponse(), (r, i, a) ->
               console.log r
+              $cookieStore.put('loggedin', true)
+              $scope.$apply()
+              console.log 'set loggedin'
               location.reload()
               return
             return
@@ -24,7 +27,11 @@ app.controller 'Login', ($scope)->
         # FB.logout (response) ->
         #   user is now logged out
         console.log r
+        $cookieStore.remove('loggedin')
+        $scope.$apply()
         location.reload()
         return
 
+    $rootScope.loggedin = $cookieStore.get('loggedin') || false;
+    console.log $rootScope
     console.info 'Login Ctrl Init'

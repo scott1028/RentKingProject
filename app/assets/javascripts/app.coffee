@@ -1,7 +1,7 @@
 'use strict'
 
 
-@app = angular.module('Main', []).run [
+@app = angular.module('Main', ['ngCookies']).run [
   "$rootScope"
   "$location"
   ->

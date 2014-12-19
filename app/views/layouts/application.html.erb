@@ -8,16 +8,32 @@
 </head>
 <body class="metro" ng-app="Main">
 
-<div ng-controller="Login">
-  <h1>Auth#login</h1>
-  <p>Find me in app/views/auth/login.html.erb</p>
-  <p>Current User: <%= @user_id %><p>
-  
-  <button ng-click="login()">FB Login</button>
-  <button ng-click="logout()">FB Logout</button>
-</div>
+  <header class="bg-dark">
+    <div class="navigation-bar dark" ng-controller="Login">
+      <div class="navigation-bar-content container">
+        <span class="element">
+          Current User: <%= @user_id %>
+        </span>
+        <span class="element-divider"></span>
+        <a
+          class="element place-right"
+          ng-click="login()"
+          ng-hide="loggedin"
+          href="">
+            Login
+        </a>
+        <a
+          class="element place-right"
+          ng-click="logout()"
+          ng-show="loggedin"
+          href="">
+            Logout
+        </a>
+      </div>
+    </div>
+  </header>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
