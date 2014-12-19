@@ -8,6 +8,15 @@
 </head>
 <body class="metro" ng-app="Main">
 
+<div ng-controller="Login">
+  <h1>Auth#login</h1>
+  <p>Find me in app/views/auth/login.html.erb</p>
+  <p>Current User: <%= @user_id %><p>
+  
+  <button ng-click="login()">FB Login</button>
+  <button ng-click="logout()">FB Logout</button>
+</div>
+
 <%= yield %>
 
 </body>
