@@ -13,7 +13,7 @@ app.controller 'Login', ($scope, $rootScope, $cookieStore)->
             console.log "Good to see you, " + response.name + "."
             $.post "/auth/check_access_token/", FB.getAuthResponse(), (r, i, a) ->
               console.log r
-              $cookieStore.put('loggedin', true)
+              $cookieStore.put 'loggedin', true
               $scope.$apply()
               console.log 'set loggedin'
               location.reload()
@@ -27,11 +27,11 @@ app.controller 'Login', ($scope, $rootScope, $cookieStore)->
         # FB.logout (response) ->
         #   user is now logged out
         console.log r
-        $cookieStore.remove('loggedin')
+        $cookieStore.remove 'loggedin'
         $scope.$apply()
         location.reload()
         return
 
-    $rootScope.loggedin = $cookieStore.get('loggedin') || false;
+    $rootScope.loggedin = $cookieStore.get('loggedin') || false
     console.log $rootScope
     console.info 'Login Ctrl Init'

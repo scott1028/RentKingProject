@@ -11,7 +11,7 @@
   <header class="bg-dark">
     <div class="navigation-bar dark" ng-controller="Login">
       <div class="navigation-bar-content container">
-        <span class="element">
+        <span class="element" ng-show="loggedin">
           Current User: <%= @user_id %>
         </span>
         <span class="element-divider"></span>
