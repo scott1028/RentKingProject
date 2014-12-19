@@ -11,26 +11,29 @@
   <header class="bg-dark">
     <div class="navigation-bar dark" ng-controller="Login">
       <div class="navigation-bar-content container">
-        <span
-          class="element"
-          ng-show="<%= @loggined_user_id != nil %>">
-            Current User: <%= @loggined_user_id %>
-        </span>
+        <% if @loggined_user_id != nil %>
+          <span class="element">
+              Current User: <%= @loggined_user_id %>
+          </span>
+        <% end %>
+        
         <span class="element-divider"></span>
-        <a
-          class="element place-right"
-          ng-click="login()"
-          ng-show="<%= @loggined_user_id == nil %>"
-          href="">
-            Login
-        </a>
-        <a
-          class="element place-right"
-          ng-click="logout()"
-          ng-show="<%= @loggined_user_id != nil %>"
-          href="">
-            Logout
-        </a>
+
+        <% if @loggined_user_id == nil %>
+          <a
+            class="element place-right"
+            ng-click="login()"
+            href="">
+              Login
+          </a>
+        <% else %>
+          <a
+            class="element place-right"
+            ng-click="logout()"
+            href="">
+              Logout
+          </a>
+        <% end %>
       </div>
     </div>
   </header>

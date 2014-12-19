@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :check_editable, only: [:edit, :update, :destroy]
 
   # GET /items
   # GET /items.json
@@ -74,5 +75,13 @@ class ItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:label, :description, :genre, :price, :photo)
+    end
+
+    def check_editable
+      if @item.created_user != @loggined_user_id
+        render text: 'not found', status: 401
+      else
+        # 
+      end
     end
 end

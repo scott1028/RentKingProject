@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 20141219121827) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "genre"
-    t.string   "created_user"
-    t.string   "updated_user"
+    t.integer  "created_user"
+    t.integer  "updated_user"
   end
 
   create_table "replies", force: true do |t|
     t.text     "message"
-    t.string   "created_user"
-    t.string   "updated_user"
+    t.integer  "created_user"
+    t.integer  "updated_user"
     t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
