@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141219113153) do
+ActiveRecord::Schema.define(version: 20141219121827) do
 
   create_table "items", force: true do |t|
     t.string   "label"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20141219113153) do
     t.string   "genre"
     t.string   "created_user"
     t.string   "updated_user"
+  end
+
+  create_table "replies", force: true do |t|
+    t.text     "message"
+    t.string   "created_user"
+    t.string   "updated_user"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

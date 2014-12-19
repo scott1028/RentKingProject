@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :replies
+
   get 'auth/login'
   get 'auth/logout'
   get 'auth/check_if_logined'
