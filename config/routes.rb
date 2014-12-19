@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get 'auth/check_if_logined'
   post 'auth/check_access_token'
 
-  resources :post_lists
+  resources :items
 
   # root 'root#index'
-  root 'post_lists#index'
+  root 'items#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
