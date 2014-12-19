@@ -1,6 +1,9 @@
 <h1>Auth#login</h1>
 <p>Find me in app/views/auth/login.html.erb</p>
 
+
+<p>Current User: <%= @user_id %><p>
+
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -42,6 +45,9 @@
   };
 
   var logout = function(){
+    $.get('/auth/logout/', function(r, i, a){
+      console.log(r);
+    });
     FB.logout(function(response) {
       // user is now logged out
     });

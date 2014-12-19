@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'auth/login'
-  post 'auth/check_access_token'
-
   get 'auth/logout'
+  get 'auth/check_if_logined'
+  post 'auth/check_access_token'
 
   resources :post_lists
 
