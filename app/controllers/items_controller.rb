@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @replies = Reply.where(:item_id => @item.id)
   end
 
   # GET /items/new

@@ -25,10 +25,5 @@
   <%= @item.photo %>
 </p>
 
-<% @item.replies.each do | reply | %>
-  <div><%= reply.created_user %></div>
-  <div><%= reply.message %></div>
-<% end %>
-
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

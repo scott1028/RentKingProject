@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :replies
-
   get 'auth/login'
   get 'auth/logout'
   get 'auth/check_if_logined'
   post 'auth/check_access_token'
 
+  resources :replies
   resources :items
 
   # root 'root#index'
