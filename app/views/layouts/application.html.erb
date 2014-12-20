@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>RentKing</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
 <body class="metro" ng-app="Main">
@@ -22,15 +23,13 @@
         <% if @loggined_user_id == nil %>
           <a
             class="element place-right"
-            ng-click="login()"
-            href="">
+            ng-click="login()">
               Login
           </a>
         <% else %>
           <a
             class="element place-right"
-            ng-click="logout()"
-            href="">
+            ng-click="logout()">
               Logout
           </a>
         <% end %>

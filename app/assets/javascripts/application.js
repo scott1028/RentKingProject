@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require angular/angular
 //= require angular-resource/angular-resource
 //= require angular-route/angular-route
@@ -20,4 +19,4 @@
 //= require angular-ui-bootstrap-bower/ui-bootstrap.js
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls.js
 //= require Metro-UI-CSS/min/metro.min.js
-// = require_tree .
+//= require_tree .
