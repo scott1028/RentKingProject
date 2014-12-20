@@ -1,6 +1,6 @@
 class CreatePostLists < ActiveRecord::Migration
   def change
-    create_table :post_lists do |t|
+    create_table :items do |t|
       t.string :label
       t.text :description
       t.integer :price

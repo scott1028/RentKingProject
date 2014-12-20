@@ -1,5 +1,5 @@
 class AddPostGenre < ActiveRecord::Migration
   def change
-  	add_column :post_lists, :genre, :string
+  	add_column :items, :genre, :string
   end
 end
