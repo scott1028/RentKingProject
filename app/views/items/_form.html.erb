@@ -1,43 +1,52 @@
 <div>
   <%= form_for(@item) do |f| %>
-    <% if @item.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+    <fieldset>
+      <% if @item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-        <ul>
-        <% @item.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+          <ul>
+          <% @item.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= f.label :label %>
+      <div class="field input-control text">
+        <%= f.text_field :label %>
       </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :label %><br>
-      <%= f.text_field :label %>
-    </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </div>
-    <div class="field">
-      <%= f.label :genre %><br>
-      <%= f.text_field :genre %>
-    </div>
-    <div class="field">
-      <%= f.label :price %><br>
-      <%= f.number_field :price %>
-    </div>
-    <div class="field">
-      <%= f.label :photo %><br>
-      <%= f.file_field :photo %>
-    </div>
-    <p>
-      <strong>Preview:</strong>
-      <img width="480" src="<%= @item.photo %>" />
-    </p>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+      <%= f.label :description %>
+      <div class="field input-control textarea">
+        <%= f.text_area :description %>
+      </div>
+      <%= f.label :genre %>
+      <div class="field input-control text">
+        <%= f.text_field :genre %>
+      </div>
+      <%= f.label :price %>
+      <div class="field input-control text">
+        <%= f.number_field :price %>
+      </div>
+      <%= f.label :photo %>
+      <div class="field input-control text">
+        <%= f.file_field :photo %>
+      </div>
+      <%= f.label :Preview %>
+      <div class="field image-container">
+        <img src="<%= @item.photo %>" />
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </fieldset>
   <% end %>
 </div>
+
+<!--
+<div class="input-control text" data-role="input-control">
+    <input type="text" placeholder="type text">
+    <button class="btn-clear" tabindex="-1" type="button"></button>
+</div>
+-->
