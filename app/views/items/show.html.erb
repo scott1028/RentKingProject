@@ -25,10 +25,14 @@
   <%= @item.photo %>
 </p>
 
+<p>
+  <strong>Preview:</strong>
+  <img width="480" src="<%= @item.photo %>" />
+</p>
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
 
-<script type="text/javascript">
-  var item_id = <%= @item.id %>;
-</script>
-<div ng-controller="Reply"></div>
+<div ng-controller="Reply" ng-init="init(<%= @item.id %>)">
+  <div ng-repeat="reply in replies">{{reply}}{{item_id}}</div>
+</div>
