@@ -18,7 +18,7 @@ app.controller 'Reply', ($scope, $rootScope, $cookieStore, $http)->
             console.log data, status
 
     $scope.deleteReply = (id)->
-        $http.delete('/replies/' + id)
+        $http.delete('/replies/' + id + '.json')
         .success (data, status)->
             console.log data, status
             # $scope.replies = data

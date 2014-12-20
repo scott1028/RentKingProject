@@ -25,6 +25,7 @@
 
     $rootScope.token = $('meta[name="csrf-token"]').attr('content')
     $http.defaults.headers.common['X-CSRF-Token'] = $rootScope.token
+    $http.defaults.headers.common['Content-Type'] = 'application/json'
     
     console.log 'wellcome!'
   ]
