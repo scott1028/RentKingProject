@@ -35,4 +35,6 @@
 
 <div ng-controller="Reply" ng-init="init(<%= @item.id %>)">
   <div ng-repeat="reply in replies">{{reply}}{{item_id}}</div>
+
+  <button ng-click="deleteReply(1)"></button>
 </div>

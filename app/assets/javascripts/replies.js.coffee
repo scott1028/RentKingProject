@@ -16,6 +16,33 @@ app.controller 'Reply', ($scope, $rootScope, $cookieStore, $http)->
             $scope.replies = data
         .error (data, status)->
             console.log data, status
+
+    $scope.deleteReply = (id)->
+        $http.delete('/replies/' + id)
+        .success (data, status)->
+            console.log data, status
+            # $scope.replies = data
+        .error (data, status)->
+            console.log data, status
+    $scope.updateReply = (id, data)->
+        $http.put('/replies/')
+        .success (data, status)->
+            console.log data, status
+            # $scope.replies = data
+        .error (data, status)->
+            console.log data, status
+    $scope.createReply = (data)->
+        $http.post('/replies/')
+        .success (data, status)->
+            console.log data, status
+            # $scope.replies = data
+        .error (data, status)->
+            console.log data, status
     $scope.item_id = null
     $scope.replies = []
     
+    # token = $('meta[name="csrf-token"]').attr('content')
+    # $.ajaxPrefilter((options, originalOptions, xhr)->
+    #     xhr.setRequestHeader('X-CSRF-Token', token)
+    # )
+    # debugger
