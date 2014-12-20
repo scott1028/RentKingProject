@@ -42,5 +42,11 @@
     </div>
   </div>
 
-  <!-- <button ng-click="deleteReply(1)"></button> -->
+  <div form>
+    <div ng-model="current_obj.created_user"></div>
+    <div>
+      <textarea ng-model="current_obj.message"></textarea>
+    </div>
+    <button ng-click="createReply(current_obj)">Save</button>
+  </div>
 </div>

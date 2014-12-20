@@ -79,10 +79,6 @@ class ItemsController < ApplicationController
     end
 
     def check_editable
-      if @item.created_user != @loggined_user_id
-        render text: 'not found', status: 401
-      else
-        # 
-      end
+      super @item
     end
 end

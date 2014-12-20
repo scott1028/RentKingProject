@@ -1,5 +1,6 @@
 class RepliesController < ApplicationController
   before_action :set_reply, only: [:show, :edit, :update, :destroy]
+  before_action :check_editable, only: [:edit, :update, :destroy]
 
   # GET /replies
   # GET /replies.json
@@ -25,8 +26,9 @@ class RepliesController < ApplicationController
   # POST /replies
   # POST /replies.json
   def create
-    @reply = Reply.new(reply_params)
-
+    data = reply_params
+    data[:created_user] = @loggined_user_id if @loggined_user_id != nil
+    @reply = Reply.new(data)
     respond_to do |format|
       if @reply.save
         format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
@@ -41,8 +43,10 @@ class RepliesController < ApplicationController
   # PATCH/PUT /replies/1
   # PATCH/PUT /replies/1.json
   def update
+    data = reply_params
+    data[:created_user] = @loggined_user_id if @loggined_user_id != nil
     respond_to do |format|
-      if @reply.update(reply_params)
+      if @reply.update(data)
         format.html { redirect_to @reply, notice: 'Reply was successfully updated.' }
         format.json { render :show, status: :ok, location: @reply }
       else
@@ -71,5 +75,9 @@ class RepliesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def reply_params
       params.require(:reply).permit(:message, :created_user, :updated_user, :item_id)
+    end
+
+    def check_editable
+      super @reply
     end
 end
