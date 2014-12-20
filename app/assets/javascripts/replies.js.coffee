@@ -5,7 +5,7 @@
 app.controller 'Reply', ($scope, $rootScope, $cookieStore, $http)->
     $scope.init = (item_id)->
         $scope.item_id = item_id
-        $scope.getReplies({id: $scope.item_id})
+        $scope.getReplies({item_id: $scope.item_id})
         console.info 'Reply Ctrl Init'
 
     $scope.getReplies = (params)->
@@ -21,6 +21,7 @@ app.controller 'Reply', ($scope, $rootScope, $cookieStore, $http)->
         $http.delete('/replies/' + id + '.json')
         .success (data, status)->
             console.log data, status
+            $scope.getReplies {item_id: $scope.item_id}
             # $scope.replies = data
         .error (data, status)->
             console.log data, status
@@ -28,6 +29,7 @@ app.controller 'Reply', ($scope, $rootScope, $cookieStore, $http)->
         $http.put('/replies/')
         .success (data, status)->
             console.log data, status
+            $scope.getReplies {item_id: $scope.item_id}
             # $scope.replies = data
         .error (data, status)->
             console.log data, status
@@ -35,6 +37,7 @@ app.controller 'Reply', ($scope, $rootScope, $cookieStore, $http)->
         $http.post('/replies/')
         .success (data, status)->
             console.log data, status
+            $scope.getReplies {item_id: $scope.item_id}
             # $scope.replies = data
         .error (data, status)->
             console.log data, status

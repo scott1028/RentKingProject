@@ -5,6 +5,7 @@ class RepliesController < ApplicationController
   # GET /replies.json
   def index
     @replies = Reply.all
+    @replies = @replies.where(:item_id => params[:item_id]) if params[:item_id] != nil
   end
 
   # GET /replies/1

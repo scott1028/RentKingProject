@@ -34,7 +34,13 @@
 <%= link_to 'Back', items_path %>
 
 <div ng-controller="Reply" ng-init="init(<%= @item.id %>)">
-  <div ng-repeat="reply in replies">{{reply}}{{item_id}}</div>
+  <div ng-repeat="reply in replies">
+    <div>{{reply.message}}</div>
+    <div>{{reply.created_user}}</div>
+    <div>
+      <button ng-click="deleteReply(reply.id)">Delete</button>
+    </div>
+  </div>
 
-  <button ng-click="deleteReply(1)"></button>
+  <!-- <button ng-click="deleteReply(1)"></button> -->
 </div>
